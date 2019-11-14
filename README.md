@@ -1,7 +1,7 @@
 # atsamd support for Rust
 
-This repo holds various things that support/enable working with atmel samd21 and samd51 based
-devices, such as the Adafruit Metro M0, Trinket M0 and Gemma M0, using Rust.
+This repo holds various things that support/enable working with atmel samc21
+devices, such as the SAMC21N Xplained Pro Evaluation Kit, using Rust.
 
 [![Build Status](https://travis-ci.org/atsamd-rs/atsamd.svg?branch=master)](https://travis-ci.org/atsamd-rs/atsamd)
 
