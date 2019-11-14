@@ -13,7 +13,7 @@ There are a couple of crates provided by this repo:
   auto-generated crate providing access to the peripherals
   specified for this device by its SVD file.  This is the MCU used in the SAMC21N Xplained Pro Evaluation Kit
 
-* [`atsamc-hal`](https://docs.rs/atsamd_hal/) is the result
+* [`atsamc-hal`](https://docs.rs/atsamc_hal/) is the result
   of reading the datasheet for the device and encoding
   a type-safe layer over the raw `atsamd21g18a` crate.  This crate
   implements traits specified by the `embedded-hal` project, making it compatible with
