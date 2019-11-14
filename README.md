@@ -19,28 +19,14 @@ There are a couple of crates provided by this repo:
   implements traits specified by the `embedded-hal` project, making it compatible with
   various drivers in the embedded rust ecosystem.
 
-In addition to the generic crates, there are also crates for popular ATSAMD21/51 based development boards. They aim to rename pins to match silk screens or Arduino pin assignments, add helpers for initialization, and re-export the `atsamd-hal` crate.
+In addition to the generic crates, there are also crates for popular ATSAMC21 based development boards. They aim to rename pins to match silk screens or Arduino pin assignments, add helpers for initialization, and re-export the `atsamd-hal` crate.
 
-* [`arduino_mkrzero`](https://docs.rs/arduino_mkrzero/)
-* [`circuit_playground_express`](https://docs.rs/circuit_playground_express/)
-* [`feather_m0`](https://docs.rs/feather_m0/)
-* [`gemma_m0`](https://docs.rs/gemma_m0/)
-* [`itsybitsy_m0`](https://docs.rs/itsybitsy_m0/)
-* [`metro_m0`](https://docs.rs/metro_m0/)
-* [`samd21_mini`](https://docs.rs/samd21_mini/)
-* [`trinket_m0`](https://docs.rs/trinket_m0/)
-* [`sodaq_one`](https://docs.rs/sodaq_one/)
-* [`metro_m4`](https://docs.rs/metro_m4/)
-* [`trellis_m4`](https://docs.rs/trellis_m4/)
-* [`feather_m4`](https://docs.rs/feather_m4/)
-* [`pyportal`](https://docs.rs/pyportal/)
-* [`pygamer`](https://docs.rs/pygamer/)
-* [`sodaq_sara_aff`](https://docs.rs/sodaq_sara_aff/)
+* [`TBC`](https://docs.rs/TBC/)
 
 ## Building
 
  You'll need to install support for
-`thumbv6m-none-eabi` if you're targeting samd21 or `thumbv7em-none-eabihf` if you're targeting samd51.  Make sure that you have a new enough version of the
+`thumbv6m-none-eabi` if you're targeting samc21.  Make sure that you have a new enough version of the
 gcc toolchain; the one installable even on recent versions of ubuntu can
 fail to correctly link the vector table:
 
@@ -69,9 +55,9 @@ If you'd like to build all the same things that the CI would build but on
 your local system, you can run:
 
 ```
-$ mkdir -p /tmp/atsamd-virtualenv
-$ virtualenv /tmp/atsamd-virtualenv
-$ source /tmp/atsamd-virtualenv/bin/activate
+$ mkdir -p /tmp/atsamc-virtualenv
+$ virtualenv /tmp/atsamc-virtualenv
+$ source /tmp/atsamc-virtualenv/bin/activate
 $ pip install -r requirements.txt
 $ ./build-all.py
 ```
