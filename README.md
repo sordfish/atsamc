@@ -1,7 +1,9 @@
-# atsamd support for Rust
+# atsamc support for Rust
 
 This repo holds various things that support/enable working with atmel samc21
 devices, such as the SAMC21N Xplained Pro Evaluation Kit, using Rust.
+
+Forked from [atsamd-rs/atsamd](https://github.com/atsamd-rs/atsamd)
 
 [![Build Status](https://travis-ci.org/atsamd-rs/atsamd.svg?branch=master)](https://travis-ci.org/atsamd-rs/atsamd)
 
