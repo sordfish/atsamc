@@ -9,7 +9,7 @@
 //! impossible to misuse.
 use crate::target_device::port::{DIRCLR, DIRSET, OUTCLR, OUTSET, PINCFG0_, PMUX0_};
 
-#[cfg(any(feature = "samd21g18a", feature="samd21j18a", feature = "samd51"))]
+#[cfg(any(feature = "samc21n18a"))]
 use crate::target_device::port::{PINCFG1_, PMUX1_};
 
 use crate::target_device::PORT;

@@ -1,13 +1,13 @@
-# HAL for working with atsamd devices
+# HAL for working with atsamc devices
 
-This crate provides a type-safe API for working with atsamd21 and atsamd51 based devices.
-Currently this crate supports `atsamd21g18a`, `atsamd21e18a` or `atsamd51j19a` 
-(selectable via the `samd21g18a`, `samd21e18a`, or `samd51j19a` features),
+This crate provides a type-safe API for working with atsamc21 based devices.
+Currently this crate supports `atsamc21n18a`
+(selectable via the `samc21n18a` features),
 and should be able to support other variants in a similar fashion; 
 pull requests for this are welcomed!
 
 ## Examples?
 
-Check out the metro_m0 board support crate examples:
+Check out the samc21n_xplained_pro board support crate examples:
 
-https://github.com/atsamd-rs/atsamd/tree/master/metro_m0/examples
+https://github.com/sordfish/atsamc/tree/master/samc21n_xplained_pro/examples
