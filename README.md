@@ -15,7 +15,7 @@ There are a couple of crates provided by this repo:
 
 * [`atsamd-hal`](https://docs.rs/atsamd_hal/) is the result
   of reading the datasheet for the device and encoding
-  a type-safe layer over the raw `atsamd21g18a`, `atsamd21e18a`, `atsamd21j18a`, `atsamd51j19a`, and `atsamd51g19a` crates.  This crate
+  a type-safe layer over the raw `atsamd21g18a` crate.  This crate
   implements traits specified by the `embedded-hal` project, making it compatible with
   various drivers in the embedded rust ecosystem.
 
