@@ -9,7 +9,7 @@ Forked from [atsamd-rs/atsamd](https://github.com/atsamd-rs/atsamd)
 
 There are a couple of crates provided by this repo:
 
-* [`atsamd21n18a`](https://docs.rs/atsamd21g18a/) is an
+* [`atsamc21n18a`](https://docs.rs/atsamc21n18a/) is an
   auto-generated crate providing access to the peripherals
   specified for this device by its SVD file.  This is the MCU used in the SAMC21N Xplained Pro Evaluation Kit
 
