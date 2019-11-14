@@ -5,7 +5,7 @@ devices, such as the SAMC21N Xplained Pro Evaluation Kit, using Rust.
 
 Forked from [atsamd-rs/atsamd](https://github.com/atsamd-rs/atsamd)
 
-[![Build Status](https://travis-ci.org/atsamd-rs/atsamd.svg?branch=master)](https://travis-ci.org/atsamd-rs/atsamd)
+[![Build Status](https://travis-ci.org/sordfish/atsamc.svg?branch=master)](https://travis-ci.org/sordfish/atsamc)
 
 There are a couple of crates provided by this repo:
 
