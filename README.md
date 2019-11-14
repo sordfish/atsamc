@@ -7,22 +7,10 @@ devices, such as the SAMC21N Xplained Pro Evaluation Kit, using Rust.
 
 There are a couple of crates provided by this repo:
 
-* [`atsamd21g18a`](https://docs.rs/atsamd21g18a/) is an
+* [`atsamd21n18a`](https://docs.rs/atsamd21g18a/) is an
   auto-generated crate providing access to the peripherals
-  specified for this device by its SVD file.  This is the MCU used in the Metro M0,
-  Feather M0, Circuit Playground express boards from Adafruit, the Sparkfun SAMD21 Mini, the Arduino MKR ZERO and the SODAQ ONE board
-  from SODAQ.
-* [`atsamd21e18a`](https://docs.rs/atsamd21e18a/) is an
-  auto-generated crate providing access to the peripherals
-  specified for this device by its SVD file.  This is the MCU used in the Trinket M0
-  and Gemma M0 boards from Adafruit.
-* [`atsamd21j18a`](https://docs.rs/atsamd21j18a/) is an
-  auto-generated crate providing access to the peripherals
-  specified for this device by its SVD file.  This is the MCU used in the SARA AFF
-  boards from Sodaq.
-* [`atsamd51j19a`](https://docs.rs/atsamd51j19a/) is an auto-generated crate providing access to the peripherals specified for this device by its SVD file. This is the MCU used in the Metro M4 and Feather M4 boards from Adafruit.
-* [`atsamd51j20a`](https://docs.rs/atsamd51j20a/) is an auto-generated crate providing access to the peripherals specified for this device by its SVD file. This is the MCU used in the PyPortal board from Adafruit.
-* [`atsamd51g19a`](https://docs.rs/atsamd51g19a/) is an auto-generated crate providing access to the peripherals specified for this device by its SVD file. This is the MCU used in the Trellis M4 and ItsyBitsy M4 boards from Adafruit.
+  specified for this device by its SVD file.  This is the MCU used in the SAMC21N Xplained Pro Evaluation Kit
+
 * [`atsamd-hal`](https://docs.rs/atsamd_hal/) is the result
   of reading the datasheet for the device and encoding
   a type-safe layer over the raw `atsamd21g18a`, `atsamd21e18a`, `atsamd21j18a`, `atsamd51j19a`, and `atsamd51g19a` crates.  This crate
