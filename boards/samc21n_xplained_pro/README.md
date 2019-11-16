@@ -6,4 +6,4 @@ This crate provides a type-safe API for working with the [SAMC21N Xplained Pro E
 
 Check out the repository for examples:
 
-https://github.com/sordfish/atsamc/tree/master/boards/samc21_xplained_pro/examples
+https://github.com/sordfish/atsamc/tree/master/boards/samc21n_xplained_pro/examples
