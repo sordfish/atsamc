@@ -1,6 +1,6 @@
 [package]
 name = "samc21n_xplained_pro"
-version = "0.5.0.1"
+version = "0.5.1"
 authors = ["Wez Furlong <wez@wezfurlong.org>","Arran Short <arrancshort@gmail.com>"]
 description = "Board Support crate for the SAMC21N Xplained Pro Evaluation Kit"
 keywords = ["no-std", "arm", "cortex-m", "embedded-hal"]
