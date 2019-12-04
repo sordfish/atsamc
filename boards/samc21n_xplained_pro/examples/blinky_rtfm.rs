@@ -4,7 +4,7 @@
 extern crate cortex_m;
 extern crate cortex_m_rt;
 extern crate cortex_m_semihosting;
-extern crate metro_m0 as hal;
+extern crate samc21n_xplained_pro as hal;
 #[cfg(not(feature = "use_semihosting"))]
 extern crate panic_halt;
 #[cfg(feature = "use_semihosting")]

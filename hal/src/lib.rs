@@ -4,23 +4,8 @@ pub extern crate embedded_hal as hal;
 
 pub use paste;
 
-#[cfg(feature = "samd21e18a")]
+#[cfg(feature = "samc21n18a")]
 pub use atsamd21e18a as target_device;
-
-#[cfg(feature = "samd21g18a")]
-pub use atsamd21g18a as target_device;
-
-#[cfg(feature = "samd21j18a")]
-pub use atsamd21j18a as target_device;
-
-#[cfg(feature = "samd51g19a")]
-pub use atsamd51g19a as target_device;
-
-#[cfg(feature = "samd51j19a")]
-pub use atsamd51j19a as target_device;
-
-#[cfg(feature = "samd51j20a")]
-pub use atsamd51j20a as target_device;
 
 #[cfg(feature = "use_rtt")]
 pub use jlink_rtt;
@@ -47,17 +32,11 @@ macro_rules! dbgprint {
 pub mod common;
 pub use self::common::*;
 
-#[cfg(feature="samd51")]
-pub mod samd51;
-#[cfg(feature="samd51")]
-pub use self::samd51::*;
+#[cfg(feature="samc21")]
+pub mod samc21;
+#[cfg(feature="samc21")]
+pub use self::samc51::*;
 
-#[cfg(not(feature="samd51"))]
-pub mod samd21;
-#[cfg(not(feature="samd51"))]
-pub use self::samd21::*;
+#[cfg(all(feature = "can", feature="samc21"))]
+pub use self::samc21::can;
 
-#[cfg(all(feature = "usb", feature="samd21"))]
-pub use self::samd21::usb;
-#[cfg(all(feature = "usb", feature="samd51"))]
-pub use self::samd51::usb;
