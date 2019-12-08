@@ -1,0 +1,256 @@
+   Compiling atsamc-hal v0.7.5 (/home/probook/Documents/atsamc/hal)
+error[E0432]: unresolved imports `crate::target_device::port::DIRCLR`, `crate::target_device::port::DIRSET`, `crate::target_device::port::OUTCLR`, `crate::target_device::port::OUTSET`, `crate::target_device::port::PINCFG0_`, `crate::target_device::port::PMUX0_`
+  --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:10:34
+   |
+10 | use crate::target_device::port::{DIRCLR, DIRSET, OUTCLR, OUTSET, PINCFG0_, PMUX0_};
+   |                                  ^^^^^^  ^^^^^^  ^^^^^^  ^^^^^^  ^^^^^^^^  ^^^^^^ no `PMUX0_` in `port`
+   |                                  |       |       |       |       |
+   |                                  |       |       |       |       no `PINCFG0_` in `port`
+   |                                  |       |       |       no `OUTSET` in `port`
+   |                                  |       |       no `OUTCLR` in `port`
+   |                                  |       no `DIRSET` in `port`
+   |                                  no `DIRCLR` in `port`
+
+error[E0432]: unresolved imports `crate::target_device::port::PINCFG1_`, `crate::target_device::port::PMUX1_`
+  --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:13:34
+   |
+13 | use crate::target_device::port::{PINCFG1_, PMUX1_};
+   |                                  ^^^^^^^^  ^^^^^^ no `PMUX1_` in `port`
+   |                                  |
+   |                                  no `PINCFG1_` in `port`
+
+error[E0432]: unresolved import `crate::clock`
+ --> /home/probook/Documents/atsamc/hal/src/common/delay.rs:6:12
+  |
+6 | use crate::clock::GenericClockController;
+  |            ^^^^^
+  |            |
+  |            unresolved import
+  |            help: a similar path exists: `atsamc21n18a::rtc::mode2::clock`
+
+warning: unused macro definition
+  --> /home/probook/Documents/atsamc/hal/src/common/pad.rs:13:1
+   |
+13 | / macro_rules! pad {
+14 | |     ($PadType:ident {
+15 | |         $($PinType:ident ($Pf:ident),)+
+16 | |     }
+...  |
+40 | |     };
+41 | | }
+   | |_^
+   |
+   = note: `#[warn(unused_macros)]` on by default
+
+error[E0609]: no field `outtgl0` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:488:49
+    |
+488 |           pincfg0, outset0, outclr0, pmux0, out0, outtgl0, in0);
+    |                                                   ^^^^^^^ unknown field
+...
+499 | / port!([
+500 | |     Pa0: (pa0, 0),
+501 | |     Pa1: (pa1, 1),
+502 | |     Pa2: (pa2, 2),
+...   |
+564 | |     Pb31: (pb31, 31),
+565 | | ]);
+    | |___- in this macro invocation
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error[E0609]: no field `outtgl1` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:493:49
+    |
+493 |           pincfg1, outset1, outclr1, pmux1, out1, outtgl1, in1);
+    |                                                   ^^^^^^^ unknown field
+...
+499 | / port!([
+500 | |     Pa0: (pa0, 0),
+501 | |     Pa1: (pa1, 1),
+502 | |     Pa2: (pa2, 2),
+...   |
+564 | |     Pb31: (pb31, 31),
+565 | | ]);
+    | |___- in this macro invocation
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error[E0609]: no field `outset0` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:488:18
+    |
+488 |           pincfg0, outset0, outclr0, pmux0, out0, outtgl0, in0);
+    |                    ^^^^^^^ unknown field
+...
+499 | / port!([
+500 | |     Pa0: (pa0, 0),
+501 | |     Pa1: (pa1, 1),
+502 | |     Pa2: (pa2, 2),
+...   |
+564 | |     Pb31: (pb31, 31),
+565 | | ]);
+    | |___- in this macro invocation
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error[E0609]: no field `outset1` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:493:18
+    |
+493 |           pincfg1, outset1, outclr1, pmux1, out1, outtgl1, in1);
+    |                    ^^^^^^^ unknown field
+...
+499 | / port!([
+500 | |     Pa0: (pa0, 0),
+501 | |     Pa1: (pa1, 1),
+502 | |     Pa2: (pa2, 2),
+...   |
+564 | |     Pb31: (pb31, 31),
+565 | | ]);
+    | |___- in this macro invocation
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error[E0609]: no field `outclr0` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:488:27
+    |
+488 |           pincfg0, outset0, outclr0, pmux0, out0, outtgl0, in0);
+    |                             ^^^^^^^ unknown field
+...
+499 | / port!([
+500 | |     Pa0: (pa0, 0),
+501 | |     Pa1: (pa1, 1),
+502 | |     Pa2: (pa2, 2),
+...   |
+564 | |     Pb31: (pb31, 31),
+565 | | ]);
+    | |___- in this macro invocation
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error[E0609]: no field `outclr1` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:493:27
+    |
+493 |           pincfg1, outset1, outclr1, pmux1, out1, outtgl1, in1);
+    |                             ^^^^^^^ unknown field
+...
+499 | / port!([
+500 | |     Pa0: (pa0, 0),
+501 | |     Pa1: (pa1, 1),
+502 | |     Pa2: (pa2, 2),
+...   |
+564 | |     Pb31: (pb31, 31),
+565 | | ]);
+    | |___- in this macro invocation
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error[E0609]: no field `dirset0` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:401:34
+    |
+401 |         unsafe { &(*PORT::ptr()).dirset0 }
+    |                                  ^^^^^^^ unknown field
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error[E0609]: no field `dirclr0` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:404:34
+    |
+404 |         unsafe { &(*PORT::ptr()).dirclr0 }
+    |                                  ^^^^^^^ unknown field
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error[E0609]: no field `pincfg0_` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:407:34
+    |
+407 |         unsafe { &(*PORT::ptr()).pincfg0_ }
+    |                                  ^^^^^^^^ unknown field
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error[E0609]: no field `outset0` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:410:34
+    |
+410 |         unsafe { &(*PORT::ptr()).outset0 }
+    |                                  ^^^^^^^ unknown field
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error[E0609]: no field `outclr0` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:413:34
+    |
+413 |         unsafe { &(*PORT::ptr()).outclr0 }
+    |                                  ^^^^^^^ unknown field
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error[E0609]: no field `pmux0_` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:416:34
+    |
+416 |         unsafe { &(*PORT::ptr()).pmux0_ }
+    |                                  ^^^^^^ unknown field
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error[E0609]: no field `dirset1` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:421:34
+    |
+421 |         unsafe { &(*PORT::ptr()).dirset1 }
+    |                                  ^^^^^^^ unknown field
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error[E0609]: no field `dirclr1` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:425:34
+    |
+425 |         unsafe { &(*PORT::ptr()).dirclr1 }
+    |                                  ^^^^^^^ unknown field
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error[E0609]: no field `pincfg1_` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:429:34
+    |
+429 |         unsafe { &(*PORT::ptr()).pincfg1_ }
+    |                                  ^^^^^^^^ unknown field
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error[E0609]: no field `outset1` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:433:34
+    |
+433 |         unsafe { &(*PORT::ptr()).outset1 }
+    |                                  ^^^^^^^ unknown field
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error[E0609]: no field `outclr1` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:437:34
+    |
+437 |         unsafe { &(*PORT::ptr()).outclr1 }
+    |                                  ^^^^^^^ unknown field
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error[E0609]: no field `pmux1_` on type `atsamc21n18a::port::RegisterBlock`
+   --> /home/probook/Documents/atsamc/hal/src/common/gpio.rs:441:34
+    |
+441 |         unsafe { &(*PORT::ptr()).pmux1_ }
+    |                                  ^^^^^^ unknown field
+    |
+    = note: available fields are: `group0`, `group1`, `group2`
+
+error: aborting due to 21 previous errors
+
+Some errors have detailed explanations: E0432, E0609.
+For more information about an error, try `rustc --explain E0432`.
+error: could not compile `atsamc-hal`.
+
+To learn more, run the command again with --verbose.
+['cargo', 'build', '--example=blinky_basic', '--example=blinky_rtfm']
+Traceback (most recent call last):
+  File "build-all.py", line 35, in <module>
+    subprocess.check_call(cmd, cwd=crate_dir)
+  File "/usr/lib/python2.7/subprocess.py", line 541, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['cargo', 'build', '--example=blinky_basic', '--example=blinky_rtfm']' returned non-zero exit status 101

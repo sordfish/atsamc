@@ -4,15 +4,6 @@ pub extern crate embedded_hal as hal;
 
 pub use paste;
 
-#[cfg(feature = "samc21e18a")]
-pub use atsamc21e18a as target_device;
-
-#[cfg(feature = "samc21g18a")]
-pub use atsamc21g18a as target_device;
-
-#[cfg(feature = "samc21j18a")]
-pub use atsamc21j18a as target_device;
-
 #[cfg(feature = "samc21n18a")]
 pub use atsamc21n18a as target_device;
 
@@ -40,3 +31,12 @@ macro_rules! dbgprint {
 #[macro_use]
 pub mod common;
 pub use self::common::*;
+
+#[cfg(feature="samc21")]
+pub mod samc21;
+#[cfg(feature="samc21")]
+pub use self::samc21::*;
+
+#[cfg(all(feature = "can", feature="samc21"))]
+pub use self::samc21::can;
+

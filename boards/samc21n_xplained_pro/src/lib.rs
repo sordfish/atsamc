@@ -19,11 +19,6 @@ use hal::gpio::{Floating, Input, Port, PfC};
 use hal::sercom::{I2CMaster3, PadPin, SPIMaster4, SPIMaster5, UART0};
 use hal::time::Hertz;
 
-#[cfg(feature = "usb")]
-use hal::usb::usb_device::bus::UsbBusWrapper;
-#[cfg(feature = "usb")]
-pub use hal::usb::UsbBus;
-
 define_pins!(
     /// Maps the pins to their arduino names and
     /// the numbers printed on the board.
@@ -98,10 +93,6 @@ define_pins!(
     /// The CS pin attached to the on-board SPI flash
     pin flash_cs = a13,
 
-    /// The USB D- pad
-    pin usb_dm = a24,
-    /// The USB D+ pad
-    pin usb_dp = a25,
 );
 
 /// Convenience for setting up the 2x3 header block for SPI.
@@ -229,24 +220,3 @@ pub fn uart<F: Into<Hertz>>(
     )
 }
 
-#[cfg(feature = "usb")]
-pub fn usb_bus(
-    usb: pac::USB,
-    clocks: &mut GenericClockController,
-    pm: &mut pac::PM,
-    dm: gpio::Pa24<Input<Floating>>,
-    dp: gpio::Pa25<Input<Floating>>,
-    port: &mut Port,
-) -> UsbBusWrapper<UsbBus> {
-    let gclk0 = clocks.gclk0();
-    dbgprint!("making usb clock");
-    let usb_clock = &clocks.usb(&gclk0).unwrap();
-    dbgprint!("got clock");
-    UsbBusWrapper::new(UsbBus::new(
-        usb_clock,
-        pm,
-        dm.into_function(port),
-        dp.into_function(port),
-        usb,
-    ))
-}
