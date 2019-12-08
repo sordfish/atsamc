@@ -15,11 +15,11 @@ There are a couple of crates provided by this repo:
 
 * [`atsamc-hal`](https://docs.rs/atsamc_hal/) is the result
   of reading the datasheet for the device and encoding
-  a type-safe layer over the raw `atsamd21g18a` crate.  This crate
+  a type-safe layer over the raw `atsamc21n18a` crate.  This crate
   implements traits specified by the `embedded-hal` project, making it compatible with
   various drivers in the embedded rust ecosystem.
 
-In addition to the generic crates, there are also crates for popular ATSAMC21 based development boards. They aim to rename pins to match silk screens or Arduino pin assignments, add helpers for initialization, and re-export the `atsamd-hal` crate.
+In addition to the generic crates, there are also crates for popular ATSAMC21 based development boards. They aim to rename pins to match silk screens or Arduino pin assignments, add helpers for initialization, and re-export the `atsamc-hal` crate.
 
 * [`TBC`](https://docs.rs/TBC/)
 
