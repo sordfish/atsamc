@@ -5,7 +5,7 @@ pub extern crate embedded_hal as hal;
 pub use paste;
 
 #[cfg(feature = "samc21n18a")]
-pub use atsamd21e18a as target_device;
+pub use atsamc21n18a as target_device;
 
 #[cfg(feature = "use_rtt")]
 pub use jlink_rtt;
@@ -35,7 +35,7 @@ pub use self::common::*;
 #[cfg(feature="samc21")]
 pub mod samc21;
 #[cfg(feature="samc21")]
-pub use self::samc51::*;
+pub use self::samc21::*;
 
 #[cfg(all(feature = "can", feature="samc21"))]
 pub use self::samc21::can;

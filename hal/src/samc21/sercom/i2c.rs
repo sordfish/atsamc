@@ -5,7 +5,7 @@ use crate::time::Hertz;
 use crate::hal::blocking::i2c::{Read, Write, WriteRead};
 use crate::target_device::sercom0::I2CM;
 use crate::target_device::{PM, SERCOM0, SERCOM1, SERCOM2, SERCOM3};
-#[cfg(any(feature = "samd21g18a", feature="samd21j18a"))]
+#[cfg(any(feature = "samc21g18a", feature="samc21j18a"))]
 use crate::target_device::{SERCOM4, SERCOM5};
 
 const BUS_STATE_IDLE: u8 = 1;
@@ -34,7 +34,7 @@ impl<$pad0, $pad1> $Type<$pad0, $pad1> {
     /// `freq` specifies the bus frequency to use for I2C communication.
     /// There are typically a handful of values that tend to be supported;
     /// standard mode is 100.khz(), full speed mode is 400.khz().
-    /// The hardware in the atsamd device supports fast mode at 1.mhz()
+    /// The hardware in the atsamc device supports fast mode at 1.mhz()
     /// and fast mode, but there may be additional hardware configuration
     /// missing from the current software implementation that prevents that
     /// from working as-written today.
@@ -337,7 +337,7 @@ i2c!([
         ),
 ]);
 
-#[cfg(any(feature = "samd21g18a", feature="samd21j18a"))]
+#[cfg(any(feature = "samc21g18a", feature="samc21j18a"))]
 i2c!([
     I2CMaster4:
         (

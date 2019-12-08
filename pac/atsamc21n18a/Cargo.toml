@@ -7,7 +7,7 @@ keywords = ["no-std", "arm", "cortex-m"]
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/sordfish/atsamc"
 readme = "README.md"
-documentation = "https://atsamd-rs.github.io/atsamd/atsamd21g18a/atsamd21g18a/"
+documentation = "https://sordfish.github.io/atsamc/atsamc21n18a/atsamc21n18a/"
 
 [dependencies]
 bare-metal = "~0.2"

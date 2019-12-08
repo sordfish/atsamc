@@ -29,7 +29,7 @@ version = "~1.0"
 
 # Each of the supported chips is listed as an optional dependency here.
 # This makes it available when the corresponding feature name is referenced.
-# We use a feature named "samdFOO" to pull in the dependency named "atsamdFOO"
+# We use a feature named "samcFOO" to pull in the dependency named "atsamcFOO"
 [dependencies.atsamc21n18a]
 path = "../pac/atsamc21n18a"
 version = "~0.6"

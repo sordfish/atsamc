@@ -74,22 +74,22 @@ pub struct PfG;
 /// Peripheral Function H
 pub struct PfH;
 /// Peripheral Function I
-#[cfg(feature = "samd51")]
+#[cfg(feature = "samc21n18a")]
 pub struct PfI;
 /// Peripheral Function J
-#[cfg(feature = "samd51")]
+#[cfg(feature = "samc21n18a")]
 pub struct PfJ;
 /// Peripheral Function K
-#[cfg(feature = "samd51")]
+#[cfg(feature = "samc21n18a")]
 pub struct PfK;
 /// Peripheral Function L
-#[cfg(feature = "samd51")]
+#[cfg(feature = "samc21n18a")]
 pub struct PfL;
 /// Peripheral Function M
-#[cfg(feature = "samd51")]
+#[cfg(feature = "samc21n18a")]
 pub struct PfM;
 /// Peripheral Function N
-#[cfg(feature = "samd51")]
+#[cfg(feature = "samc21n18a")]
 pub struct PfN;
 
 /// A trait that makes it easier to generically manage
@@ -171,17 +171,17 @@ macro_rules! pin {
         function!(PfG, into_function_g, g);
         function!(PfH, into_function_h, h);
 
-        #[cfg(feature = "samd51")]
+        #[cfg(feature = "samc21n18a")]
         function!(PfI, into_function_i, i);
-        #[cfg(feature = "samd51")]
+        #[cfg(feature = "samc21n18a")]
         function!(PfJ, into_function_j, j);
-        #[cfg(feature = "samd51")]
+        #[cfg(feature = "samc21n18a")]
         function!(PfK, into_function_k, k);
-        #[cfg(feature = "samd51")]
+        #[cfg(feature = "samc21n18a")]
         function!(PfL, into_function_l, l);
-        #[cfg(feature = "samd51")]
+        #[cfg(feature = "samc21n18a")]
         function!(PfM, into_function_m, m);
-        #[cfg(feature = "samd51")]
+        #[cfg(feature = "samc21n18a")]
         function!(PfN, into_function_n, n);
 
         impl<MODE> $PinType<MODE> {
@@ -416,27 +416,27 @@ impl Port {
         unsafe { &(*PORT::ptr()).pmux0_ }
     }
 
-    #[cfg(any(feature = "samd21g18a", feature="samd21j18a", feature = "samd51"))]
+    #[cfg(any(feature = "samc21g18a", feature="samc21j18a", feature = "samc21n18a"))]
     fn dirset1(&mut self) -> &DIRSET {
         unsafe { &(*PORT::ptr()).dirset1 }
     }
-    #[cfg(any(feature = "samd21g18a", feature="samd21j18a", feature = "samd51"))]
+    #[cfg(any(feature = "samc21g18a", feature="samc21j18a", feature = "samc21n18a"))]
     fn dirclr1(&mut self) -> &DIRCLR {
         unsafe { &(*PORT::ptr()).dirclr1 }
     }
-    #[cfg(any(feature = "samd21g18a", feature="samd21j18a", feature = "samd51"))]
+    #[cfg(any(feature = "samc21g18a", feature="samc21j18a", feature = "samc21n18a"))]
     fn pincfg1(&mut self) -> &[PINCFG1_; 32] {
         unsafe { &(*PORT::ptr()).pincfg1_ }
     }
-    #[cfg(any(feature = "samd21g18a", feature="samd21j18a", feature = "samd51"))]
+    #[cfg(any(feature = "samc21g18a", feature="samc21j18a", feature = "samc21n18a"))]
     fn outset1(&mut self) -> &OUTSET {
         unsafe { &(*PORT::ptr()).outset1 }
     }
-    #[cfg(any(feature = "samd21g18a", feature="samd21j18a", feature = "samd51"))]
+    #[cfg(any(feature = "samc21g18a", feature="samc21j18a", feature = "samc21n18a"))]
     fn outclr1(&mut self) -> &OUTCLR {
         unsafe { &(*PORT::ptr()).outclr1 }
     }
-    #[cfg(any(feature = "samd21g18a", feature="samd21j18a", feature = "samd51"))]
+    #[cfg(any(feature = "samc21g18a", feature="samc21j18a", feature = "samc21n18a"))]
     fn pmux1(&mut self) -> &[PMUX1_; 16] {
         unsafe { &(*PORT::ptr()).pmux1_ }
     }
@@ -460,7 +460,7 @@ pub struct Parts {
     )+
     $(
         /// Pin $pin_identB
-        #[cfg(any(feature = "samd21g18a", feature="samd21j18a", feature = "samd51"))]
+        #[cfg(any(feature = "samc21g18a", feature="samc21j18a", feature = "samc21n18a"))]
         pub $pin_identB: $PinTypeB<Input<Floating>>,
     )+
 }
@@ -476,7 +476,7 @@ impl GpioExt for PORT {
                 $pin_identA: $PinTypeA { _mode: PhantomData },
             )+
             $(
-                #[cfg(any(feature = "samd21g18a", feature="samd21j18a", feature = "samd51"))]
+                #[cfg(any(feature = "samc21g18a", feature="samc21j18a", feature = "samc21n18a"))]
                 $pin_identB: $PinTypeB { _mode: PhantomData },
             )+
         }
@@ -488,7 +488,7 @@ $(
         pincfg0, outset0, outclr0, pmux0, out0, outtgl0, in0);
 )+
 $(
-    #[cfg(any(feature = "samd21g18a", feature="samd21j18a", feature = "samd51"))]
+    #[cfg(any(feature = "samc21g18a", feature="samc21j18a", feature = "samc21n18a"))]
     pin!($PinTypeB, $pin_identB, $pin_noB, dirset1, dirclr1,
         pincfg1, outset1, outclr1, pmux1, out1, outtgl1, in1);
 )+
